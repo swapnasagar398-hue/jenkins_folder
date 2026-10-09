@@ -3,16 +3,14 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout code') {
+        stage('Welcome') {
             steps {
-                checkout scm
-            }
-        }
-
-        stage('run python code') {
-            steps {
-                sh 'python extract.py'
+                echo 'Welcome to Jenkins!'
+                echo 'Learning CI/CD in DataOps'
             }
         }
     }
 }
+
+
+
