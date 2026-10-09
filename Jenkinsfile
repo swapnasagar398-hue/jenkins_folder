@@ -1,16 +1,21 @@
 
+
 pipeline {
     agent any
 
     stages {
-        stage('Welcome') {
+        stage('Checkout Code') {
             steps {
-                echo 'Welcome to Jenkins!'
-                echo 'Learning CI/CD in DataOps'
+                checkout scm
+            }
+        }
+
+        stage('Run Python') {
+            steps {
+                sh 'python extract.py'
             }
         }
     }
 }
-
 
 
